@@ -15,7 +15,11 @@ import org.osgi.service.metatype.annotations.Designate;
 @Designate(ocd=Configuration.class)
 @Component(
 		name = "io.klib.chat", 
-		property = "user.name=osgi"
+		property = {
+				"user.name=osgi",
+				"service.exported.interfaces=*"
+		}
+		
 )
 public class ChatImpl implements Chat {
 

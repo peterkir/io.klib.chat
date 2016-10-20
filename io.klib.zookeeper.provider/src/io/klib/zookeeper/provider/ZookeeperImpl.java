@@ -8,7 +8,7 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 
-@Component(name = "osgi.enroute.examples.zookeeper")
+@Component(name = "io.klib..zookeeper")
 public class ZookeeperImpl extends ZooKeeperServerMain {
 	
 	private Thread thread;
@@ -19,7 +19,7 @@ public class ZookeeperImpl extends ZooKeeperServerMain {
 		File dir = context.getDataFile("zookeeper");
 		config = new ServerConfig();
 		config.parse(new String[] { "6789", dir.getAbsolutePath() });
-		thread = new Thread(this::zk, "osgi.enroute.examples.zookeeper");
+		thread = new Thread(this::zk, "io.klib.zookeeper");
 		thread.start();
 	}
 

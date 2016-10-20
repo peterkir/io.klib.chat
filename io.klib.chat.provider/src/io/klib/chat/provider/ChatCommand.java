@@ -16,14 +16,14 @@ import osgi.enroute.debug.api.Debug;
 
 @Component(
 	property = { 
-		Debug.COMMAND_SCOPE + "=chat", 
+		Debug.COMMAND_SCOPE + "=zhat", 
 		Debug.COMMAND_FUNCTION + "=chat",
 		Debug.COMMAND_FUNCTION + "=members",
 		Debug.COMMAND_FUNCTION + "=send"
 	},
-	service = Command.class
+	service = ChatCommand.class
 )
-public class Command {
+public class ChatCommand {
 
 	public String chat() {
 		return "chat                         help\n"
