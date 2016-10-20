@@ -1,0 +1,30 @@
+#
+#  BUNDLE 
+#
+
+
+Bundle-Version:					1.0.0.${tstamp}
+Bundle-Description: 				\
+	A bundle with a provider. Notice that this provider exports the API package. \
+	It also provides a JUnit test and it can be run standalone. \
+	\
+	${warning;Please update this Bundle-Description in io.klib.zookeeper.provider/bnd.bnd}
+
+Private-Package:  \
+	io.klib.zookeeper.provider
+	
+-buildpath: \
+	osgi.enroute.base.api;version=1.0,\
+	org.apache.hadoop.zookeeper;version=3.3
+	
+-testpath: \
+	osgi.enroute.junit.wrapper;version=4.12
+
+-includeresource: {readme.md}
+
+
+-runrequires:  \
+	osgi.identity;filter:='(osgi.identity=io.klib.zookeeper.provider)'
+	
+-runbundles: \
+	${error;Resolve first}
